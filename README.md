@@ -37,6 +37,8 @@ blog posts to your (jekyll & friends) static website via feeds (and planet pluto
 
 <a href="https://github.com/geraldb/talks/blob/master/webfeeds.md"><img src="https://raw.githubusercontent.com/geraldb/talks/master/i/planet-viennarb-ii.png" align="right" width="400"/></a>
 
+> A web feed (or news feed) is a simple document/data format that 1) lets you publish a list of status updates, blog postings, articles, pictures, cartoons, recordings, etc and that 2) lets others subscribe to your updates.
+
 `viennarb.ini`
 
 ```
