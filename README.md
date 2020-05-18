@@ -53,7 +53,61 @@ title  = Planet Vienna.rb
 
 `$ pluto build viennarb.ini`
 
-<img src="https://raw.githubusercontent.com/geraldb/talks/master/i/planet-viennarb-ii.png" size="50%"/>
+<img src="https://raw.githubusercontent.com/geraldb/talks/master/i/planet-viennarb-ii.png" width="300"/>
+
+
+## Github Actions
+
+I set up a github action using the ruby template, to update the feeds of [identosphere.net](https://identosphere.net/) 3x a day:
+
+[didecentral/planetid-reboot/.github/workflows/ruby.yml](https://github.com/didecentral/planetid-reboot/blob/master/.github/workflows/ruby.yml)
+
+```
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by separate terms of service, privacy policy, and support documentation.
+# This workflow will download a prebuilt Ruby version, install dependencies and run tests with Rake
+# For more information see: https://github.com/marketplace/actions/setup-ruby-jruby-and-truffleruby
+
+name: Ruby
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    # This updates the feeds 3 times a day. See https://crontab.guru/ for help setting your own schedule.
+    - cron:  '* 3,11,19 * * *'
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Ruby
+    # To automatically get bug fixes and new Ruby versions for ruby/setup-ruby,
+    # change this to (see https://github.com/ruby/setup-ruby#versioning):
+    # uses: ruby/setup-ruby@v1
+      uses: ruby/setup-ruby@ec106b438a1ff6ff109590de34ddc62c540232e0
+      with:
+        ruby-version: 2.6
+    - name: Install dependencies
+      run: sudo apt-get install libsqlite3-dev && gem install pluto
+    - name: build reader
+      run: pluto b planetid.ini -t planetid -o docs
+    - name: Deploy Files
+      run: |
+        git remote add gh-token "https://github.com/didecentral/planetid-reboot.git"
+        git config user.name "github-actions[bot]" # I use the GitHub Actions bot here.
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add .
+        git commit -a -m "update feeds"
+        git push gh-token master
+``` 
+
 
 ### Templates
 
@@ -118,58 +172,6 @@ EOS
 
 puts ERB.new( FEED_ITEM_TEMPLATE ).result
 ```
-
-## Github Actions
-
-I set up a github action using the ruby template, to build [identosphere.net](https://identosphere.net/):
-
-[planetid-reboot/.github/workflows/ruby.yml](https://github.com/didecentral/planetid-reboot/blob/master/.github/workflows/ruby.yml)
-
-```
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by separate terms of service, privacy policy, and support documentation.
-# This workflow will download a prebuilt Ruby version, install dependencies and run tests with Rake
-# For more information see: https://github.com/marketplace/actions/setup-ruby-jruby-and-truffleruby
-
-name: Ruby
-
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-  schedule:
-    # * is a special character in YAML so you have to quote this string
-    # This updates the feeds 3 times a day. See https://crontab.guru/ for help setting your own schedule.
-    - cron:  '* 3,11,19 * * *'
-
-jobs:
-  test:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: Set up Ruby
-    # To automatically get bug fixes and new Ruby versions for ruby/setup-ruby,
-    # change this to (see https://github.com/ruby/setup-ruby#versioning):
-    # uses: ruby/setup-ruby@v1
-      uses: ruby/setup-ruby@ec106b438a1ff6ff109590de34ddc62c540232e0
-      with:
-        ruby-version: 2.6
-    - name: Install dependencies
-      run: sudo apt-get install libsqlite3-dev && gem install pluto
-    - name: build reader
-      run: pluto b planetid.ini -t planetid -o docs
-    - name: Deploy Files
-      run: |
-        git remote add gh-token "https://github.com/didecentral/planetid-reboot.git"
-        git config user.name "github-actions[bot]" # I use the GitHub Actions bot here.
-        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git add .
-        git commit -a -m "update feeds"
-        git push gh-token master
-``` 
 
 
 ## Related Projects
