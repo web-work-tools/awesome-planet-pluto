@@ -62,8 +62,8 @@ blog posts to your (jekyll & friends) static website via feeds (and planet pluto
 
 ## Related Projects
 
-* [moonmoon](https://github.com/moonmoon/moonmoon) (2 years since update)
-* [hrw/very-simple-planet-aggregator](https://github.com/hrw/very-simple-planet-aggregator) - [Article](https://marcin.juszkiewicz.com.pl/2020/01/22/vspa-very-simple-planet-aggregator/) (2020)
-* [sep/planet_ex](https://github.com/sep/planet_ex) - [Article](https://www.sep.com/sep-blog/2018/10/01/announcing-planetex-an-open-source-blog-aggregator-written-in-elixir/
+* [moonmoon](https://github.com/moonmoon/moonmoon) 
+* [hrw/very-simple-planet-aggregator](https://github.com/hrw/very-simple-planet-aggregator) - [Article](https://marcin.juszkiewicz.com.pl/2020/01/22/vspa-very-simple-planet-aggregator/)
+* [sep/planet_ex](https://github.com/sep/planet_ex) - [Article](https://www.sep.com/sep-blog/2018/10/01/announcing-planetex-an-open-source-blog-aggregator-written-in-elixir/)
   > PlanetEx is an Elixir application for aggregating employee and SharePoint blogs.
 
