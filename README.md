@@ -35,6 +35,8 @@ blog posts to your (jekyll & friends) static website via feeds (and planet pluto
 
 ### [Using Web Feeds to Build Planet Sites in Ruby](https://github.com/geraldb/talks/blob/master/webfeeds.md)
 
+<a href="https://github.com/geraldb/talks/blob/master/webfeeds.md"><img src="https://raw.githubusercontent.com/geraldb/talks/master/i/planet-viennarb-ii.png" align="right" width="400"/></a>
+
 `viennarb.ini`
 
 ```
@@ -52,8 +54,6 @@ title  = Planet Vienna.rb
 ```
 
 `$ pluto build viennarb.ini`
-
-<a href="https://github.com/geraldb/talks/blob/master/webfeeds.md"><img src="https://raw.githubusercontent.com/geraldb/talks/master/i/planet-viennarb-ii.png" align="right" width="400"/></a>
 
 
 ## Github Actions
