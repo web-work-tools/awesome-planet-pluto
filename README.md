@@ -33,7 +33,7 @@ blog posts to your (jekyll & friends) static website via feeds (and planet pluto
 * [news.rb](https://github.com/feedreader/news.rb) - news.rb quick starter script - build your own facebook newsfeed in 1-2-3 steps in 5 minutes
 * [pluto.more.tools](https://github.com/feedreader/pluto.more.tools) - misc feedreader utility tools plus planet notes, links and more
 
-#### [Using Web Feeds to Build Planet Sites in Ruby](https://github.com/geraldb/talks/blob/master/webfeeds.md)
+### [Using Web Feeds to Build Planet Sites in Ruby](https://github.com/geraldb/talks/blob/master/webfeeds.md)
 
 `viennarb.ini`
 
@@ -133,7 +133,7 @@ Example command using the blank template outputting to the docs directory (where
 * [pluto.live.starter](https://github.com/plutolive/pluto.live.starter) - planet starter [example site](http://planetweb.herokuapp.com/?style=random) - sinatra web app in ruby using the pluto gem
 * [pluto.admin](https://github.com/plutolive/pluto.admin) - planet web admin - sintara web app ready to get mounted into your web app
 
-#### [New Horizons - Build Your Own (Static) Planet News Site w/ Pluto (and Ruby)](https://github.com/geraldb/talks/blob/master/planet.md) - @geraldb
+### [New Horizons - Build Your Own (Static) Planet News Site w/ Pluto (and Ruby)](https://github.com/geraldb/talks/blob/master/planet.md) - @geraldb
 
 **Planet Feed Reader in 20 Lines of Ruby**
 
