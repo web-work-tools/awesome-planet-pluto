@@ -2,7 +2,7 @@
 
 Links related to Planet Pluto Static Feed Aggregator
 
-You create a list of feeds (RSS, ATOM, JSON), pluto builds web-pages based on the content of those feeds.
+You create a list of feeds (RSS, ATOM, JSON), pluto builds web-pages based on the feed sources you provide.
 
 ## What's a Planet?
 * [Planet (Software)](https://en.wikipedia.org/wiki/Planet_(software))
