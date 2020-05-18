@@ -1,4 +1,4 @@
-# Awesome Planet Pluto
+# Planet Pluto [is Awesome]
 
 Links related to Planet Pluto Static Feed Aggregator
 
