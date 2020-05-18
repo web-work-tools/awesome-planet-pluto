@@ -53,7 +53,7 @@ title  = Planet Vienna.rb
 
 `$ pluto build viennarb.ini`
 
-<img src="https://raw.githubusercontent.com/geraldb/talks/master/i/planet-viennarb-ii.png" width="400"/>
+<a href="https://github.com/geraldb/talks/blob/master/webfeeds.md"><img src="https://raw.githubusercontent.com/geraldb/talks/master/i/planet-viennarb-ii.png" align="right" width="400"/></a>
 
 
 ## Github Actions
