@@ -60,31 +60,24 @@ title  = Planet Vienna.rb
 
 ## Github Actions
 
-I set up a github action using the ruby template, to update the feeds of [identosphere.net](https://identosphere.net/) 3x a day:
+I set up a github action using the ruby template, to update the feeds of [identosphere.net](https://identosphere.net/) every 3 hours:
 
 [didecentral/planetid-reboot/.github/workflows/ruby.yml](https://github.com/didecentral/planetid-reboot/blob/master/.github/workflows/ruby.yml)
 
 ```
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by separate terms of service, privacy policy, and support documentation.
 # This workflow will download a prebuilt Ruby version, install dependencies and run tests with Rake
 # For more information see: https://github.com/marketplace/actions/setup-ruby-jruby-and-truffleruby
 
 name: Ruby
 
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
   schedule:
     # * is a special character in YAML so you have to quote this string
-    # This updates the feeds 3 times a day. See https://crontab.guru/ for help setting your own schedule.
-    - cron:  '* 3,11,19 * * *'
+    - cron:  '15 */3 * * *'
+    # 'On the 15th minute of every 3rd hour'
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -105,7 +98,6 @@ jobs:
         git remote add gh-token "https://github.com/didecentral/planetid-reboot.git"
         git config user.name "github-actions[bot]" # I use the GitHub Actions bot here.
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git add .
         git commit -a -m "update feeds"
         git push gh-token master
 ``` 
