@@ -73,8 +73,7 @@ name: Ruby
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '15 */3 * * *'
-    # 'On the 15th minute of every 3rd hour'
+    - cron:  '15 * * * *'
 
 jobs:
   test:
